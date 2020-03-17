@@ -1,0 +1,19 @@
+{
+    "name": "leychan/input-file-convertor",
+    "description": "用于转换输入法词库到另一种词库",
+    "type": "library",
+    "authors": [
+        {
+            "name": "chenlei",
+            "email": "leilei1512159@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "leychan\\Convert\\": "src/"
+        }
+    }
+}
