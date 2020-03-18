@@ -8,13 +8,16 @@ use leychan\Convert\FileHandler as FileHandler;
 $src = '/home/chenlei/tmp/ch3.txt';
 $dst = '/home/chenlei/tmp/ch3_cvt.txt';
 
-$glob = FileHandler::readFile($src);
-$glob_new = fopen($dst, 'w+');
+FileHandler::setReadResource($src);
+FileHandler::setWriteResource($dst);
+$glob = FileHandler::readFile();
 
 while ($glob->valid()) {
     $line = $glob->current();
     $line = Convertor::baiduToLibpiyin($line);
-    FileHandler::writeFile($glob_new, $line . "\n");
+//    echo $line, PHP_EOL;
+    FileHandler::writeFile($line . "\n");
     $glob->next();
 }
-fclose($glob_new);
+
+FileHandler::closeWriteFile();
