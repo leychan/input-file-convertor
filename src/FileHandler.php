@@ -4,8 +4,8 @@ namespace leychan\Convert;
 
 class FileHandler
 {
-    static $write_res; //读入的文本资源
-    static $read_res; //要写入的文本资源
+    static protected $write_res; //读入的文本资源
+    static protected $read_res; //要写入的文本资源
 
     public static function readFile() :\Generator {
         if (empty(self::$read_res)) {
