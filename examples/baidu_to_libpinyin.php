@@ -23,6 +23,7 @@ while ($glob->valid()) {
 }
 
 FileHandler::closeWriteFile();
+
 function getUser() {
-    return trim(shell_exec('echo $USER'));
+    return getenv('USER');
 }
